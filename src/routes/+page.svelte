@@ -2,7 +2,6 @@
 	export let data;
 
 	const movies = data.data.results;
-	console.log(movies);
 </script>
 
 <div class="w-full mx-auto overflow-auto">
@@ -13,7 +12,8 @@
 				<div class="min-w-[300px] md:first:ml-10">
 					<img
 						src={'https://image.tmdb.org/t/p/w300/' + item.backdrop_path}
-						alt=""
+						alt={item.title}
+						style:--tag="h-{item.id}"
 						class="rounded-lg shadow-lg hover:-translate-y-1 cursor-pointer transition-all snap-center"
 					/>
 					<div class="snap-center p-2">{item.title}</div>
