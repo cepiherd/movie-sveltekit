@@ -1,8 +1,8 @@
 import { error } from "@sveltejs/kit";
 
-export async function load({params}) {
-    const url = 'http://localhost:5173/api/popular';
-    const res = await fetch(url);
+export async function load({ url , params }) {
+    const urls = url.href + 'api/popular';
+    const res = await fetch(urls);
     if (res) {
         return res.json();
     }
