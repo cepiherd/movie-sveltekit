@@ -2,6 +2,8 @@
 	import '../app.css';
 	import { page } from '$app/stores';
 	let darkMode = false;
+	import Home from '$lib/assets/Home.svelte';
+	import Search from '$lib/assets/Search.svelte';
 	const toggleDarkMode = () => {
 		darkMode = !darkMode;
 		document.documentElement.classList.toggle('dark', darkMode);
@@ -21,6 +23,8 @@
 <main class="dark:bg-[#0b090a] dark:text-[#fdfffc]">
 	<slot />
 </main>
+
+
 
 <style lang="postcss">
 	:global(html) {
