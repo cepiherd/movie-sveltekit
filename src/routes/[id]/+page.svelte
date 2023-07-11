@@ -2,12 +2,10 @@
 	export let data;
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
-	console.log(data);
 	$: ({ id, title, backdrop_path, overview, genres, production_companies, vote_average } =
 		data.movie);
 
 	$: credits = data.credit.data.cast;
-	$: console.log(data.credit.data);
 </script>
 
 <div class="relative">

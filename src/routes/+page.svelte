@@ -2,9 +2,14 @@
 	export let data;
 	import Home from '$lib/assets/Home.svelte';
 	import Search from '$lib/assets/Search.svelte';
+	import Logo from '$lib/assets/logo.png';
 	const popular = data.popular.data.results;
 	const topRated = data.topRated.data.results;
 </script>
+
+<nav class="py-5 px-5">
+	<img src={Logo} alt="" width="80" />
+</nav>
 
 <div class="w-full mx-auto overflow-auto">
 	<h1 class="ml-10 font-semibold text-lg">Popular</h1>
@@ -44,7 +49,7 @@
 
 <div class="fixed w-full bottom-10 px-8 md:px-0">
 	<div
-		class="max-w-sm grid grid-cols-2 gap-3 items-center justify-center mx-auto w-full text-white p-2 bg-gray-500/10 rounded-md"
+		class="max-w-sm grid grid-cols-2 gap-3 items-center justify-center mx-auto w-full text-white p-2 md:bg-gray-500/10 bg-gray-800 shadow rounded-md"
 	>
 		<a href="/" class="mx-auto hover:bg-gray-200/10 hover:p-2 transition-all rounded-md">
 			<Home />

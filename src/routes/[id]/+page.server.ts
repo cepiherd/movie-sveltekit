@@ -10,7 +10,6 @@ export async function load({ params, url }) {
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZDA1ZjlkOGM3MGI4NTlkYjhhN2YzMjdlZTZlNWQ3NSIsInN1YiI6IjYxYzE4M2MyYTIxN2MwMDA4YWVjNDBhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3gxDimvjtWsm8weWX9eoX6f0gZK4YOCcY3vXSYycopI'
         }
     });
-    console.log(url.origin + "/api/credits/" + params.id)
     const credits = await fetch(url.origin + "/api/credits/" + params.id);
 
     if (res) {

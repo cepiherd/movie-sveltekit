@@ -28,7 +28,7 @@
 	</div>
 </div>
 
-<div class="flex gap-2 flex-wrap">
+<div class="md:flex grid grid-cols-2 gap-2 flex-wrap">
 	{#each filterResult.splice(0, 10) as { id, poster_path }, i}
 		<div transition:fade class="p-3">
 			<a href={`/${id}`}>
@@ -37,7 +37,7 @@
 					alt=""
 					width="200"
 					style:--tag="h-{id}"
-					class="rounded-lg shadow hover:w-[210px] hover:cursor-pointer transition-all"
+					class="rounded-lg shadow md:hover:w-[210px]   hover:cursor-pointer transition-all"
 				/>
 			</a>
 		</div>
