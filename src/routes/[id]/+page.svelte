@@ -71,7 +71,7 @@
 
 <div class="md:mt-10">
 	<h1 class="md:text-3xl text-lg font-bold md:ml-10 ml-8">Cast</h1>
-	<div class="flex gap-4 snap snap-x snap-mandatory overflow-x-auto scroll-m-0 p-4">
+	<div class="flex gap-4  snap-x snap-mandatory overflow-x-auto scroll-m-0 p-4">
 		{#each credits as { name, character, popularity, profile_path }, i}
 			<div class="w-full md:first:ml-10 first:ml-5 last:mr-5 hover:bg-gray-500/10 transition-all rounded-md">
 				<img

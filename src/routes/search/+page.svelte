@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Search from '$lib/assets/Search.svg';
 	import { fade } from 'svelte/transition';
-	let filterResult:any = [];
-	async function findByKeyword(keyword:string) {
+	let filterResult: any = [];
+	async function findByKeyword(keyword: string) {
 		let url = `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`;
 		const res = await fetch(url, {
 			headers: {
@@ -14,6 +14,9 @@
 		const result = await res.json();
 		return (filterResult = result.results);
 	}
+	let index;
+
+	$: console.log(index);
 </script>
 
 <div class="max-w-md mx-auto self-center mt-10">
@@ -28,18 +31,28 @@
 	</div>
 </div>
 
-<div class="md:flex grid grid-cols-2 gap-2 flex-wrap">
-	{#each filterResult.splice(0, 10) as { id, poster_path }, i}
+<div class="md:flex grid grid-cols-2 gap-2 flex-wrap justify-center">
+	{#each filterResult.splice(0, 5) as { id, poster_path }, i}
 		<div transition:fade class="p-3">
 			<a href={`/${id}`}>
-				<img
-					src={'https://image.tmdb.org/t/p/original/' + poster_path}
-					alt=""
-					width="200"
-					style:--tag="h-{id}"
-					class="rounded-lg shadow md:hover:w-[210px]   hover:cursor-pointer transition-all"
-				/>
+				<div class="relative">
+					<img
+
+						src={'https://image.tmdb.org/t/p/original/' + poster_path}
+						alt=""
+						width="200"
+						style:--tag="h-{id}"
+						class="rounded-lg shadow md:hover:w-[210px] hover:cursor-pointer transition-all hover:grayscale"
+					/>
+				</div>
 			</a>
 		</div>
 	{/each}
 </div>
+
+<style>
+	.onHover {
+		@apply block;
+	}
+
+</style>
